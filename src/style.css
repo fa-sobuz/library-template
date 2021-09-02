@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.body,
+html,
+* {
+  margin: 0;
+  padding: 0;
+}
+.menu-hover {
+  @apply p-4 transform hover:text-gray-50 hover:scale-110 duration-300 font-medium text-gray-300 tracking-wide font-serif text-xl;
+}
+/*.active {*/
+/*  @apply border-b hover:border-gray-200 border-gray-300 whitespace-nowrap text-gray-200;*/
+/*}*/
+.active {
+  @apply text-gray-50 relative;
+}
+.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 5px;
+  width: 50%;
+  height: 1px;
+  background: #ffffff;
+}
+.welcome-section:first-child {
+  margin-left: 5px;
+}
+
+.welcome-section:last-child {
+  margin-right: 5px;
+}
+.welcome-section:hover #title {
+  @apply text-white !important;
+}
+.welcome-section:hover #readMore {
+  @apply text-white !important;
+}
+.product-section:hover #image {
+  @apply opacity-70;
+}
+.product-section:hover {
+  @apply shadow-md rounded-lg !important;
+}
+.product-section {
+  @apply rounded-lg bg-purple-500  !important;
+}
+.show {
+  transition: all 0.5s ease-in;
+}
+.get-absolute {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.scrollIcon {
+  left: 50%;
+  top: 50%;
+  transform: translate(50%, 50%);
+}
+.scrollToTop:hover .scrollIcon {
+  @apply text-gray-200 ease-in transition-all duration-200;
+}
+.scrollToTop:hover {
+  @apply ease-in-out transition-all duration-200;
+}
+/* scrolling smoth transition */
+.scrollToTop {
+  transition: all 0.4s ease-in;
+  opacity: 1;
+}
+.isHidden {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+.slider {
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+input:checked + .slider {
+  @apply bg-indigo-500;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(30px);
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.isview:hover {
+  @apply z-40 bg-black opacity-80 transition-all ease-in-out duration-700;
+}
+.isview:hover .view {
+  @apply text-gray-50 block;
+}
+.isview:hover .eye {
+  @apply text-gray-700;
+}
+.isview:hover .heading {
+  @apply text-gray-700;
+}
